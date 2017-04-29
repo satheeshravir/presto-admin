@@ -36,28 +36,14 @@ TOPOLOGY_CONFIG_FILE = 'config.json'
 COORDINATOR_DIR_NAME = 'coordinator'
 WORKERS_DIR_NAME = 'workers'
 CATALOG_DIR_NAME = 'catalog'
-PRESTO_REMOTE_CONF_DIR = 'PRESTO_REMOTE_CONF_DIR'
-PRESTO_REMOTE_PACKAGES_PATH = 'PRESTO_REMOTE_PACKAGES_PATH'
-PRESTO_REMOTE_SERVER_LOG_FILE = 'PRESTO_REMOTE_SERVER_LOG_FILE'
-PRESTO_REMOTE_LAUNCHER_LOG_FILE = 'PRESTO_REMOTE_LAUNCHER_LOG_FILE'
-PRESTO_REMOTE_PLUGIN_DIR = 'PRESTO_REMOTE_PLUGIN_DIR'
 
 # remote configuration
-REMOTE_CONF_DIR = os.environ[PRESTO_REMOTE_CONF_DIR] \
-                  if PRESTO_REMOTE_CONF_DIR in os.environ else '/etc/presto'
+REMOTE_CONF_DIR = '/etc/presto'
 REMOTE_CATALOG_DIR = os.path.join(REMOTE_CONF_DIR, 'catalog')
-REMOTE_PACKAGES_PATH = os.environ[PRESTO_REMOTE_PACKAGES_PATH] \
-                       if PRESTO_REMOTE_PACKAGES_PATH in os.environ \
-                       else '/opt/prestoadmin/packages'
-DEFAULT_PRESTO_SERVER_LOG_FILE = os.environ[PRESTO_REMOTE_SERVER_LOG_FILE] \
-                                 if PRESTO_REMOTE_SERVER_LOG_FILE in os.environ \
-                                 else '/var/log/presto/server.log'
-DEFAULT_PRESTO_LAUNCHER_LOG_FILE = os.environ[PRESTO_REMOTE_LAUNCHER_LOG_FILE] \
-                                   if PRESTO_REMOTE_LAUNCHER_LOG_FILE in os.environ \
-                                   else '/var/log/presto/launcher.log'
-REMOTE_PLUGIN_DIR = os.environ[PRESTO_REMOTE_PLUGIN_DIR] \
-                    if PRESTO_REMOTE_PLUGIN_DIR in os.environ \
-                    else '/usr/lib/presto/lib/plugin'
+REMOTE_PACKAGES_PATH = '/opt/prestoadmin/packages'
+DEFAULT_PRESTO_SERVER_LOG_FILE = '/var/log/presto/server.log'
+DEFAULT_PRESTO_LAUNCHER_LOG_FILE = '/var/log/presto/launcher.log'
+REMOTE_PLUGIN_DIR = '/usr/lib/presto/lib/plugin'
 REMOTE_COPY_DIR = '/tmp'
 
 # Presto configuration files
